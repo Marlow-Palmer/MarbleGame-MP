@@ -5,26 +5,23 @@ using UnityEngine;
 public class Accelorometer : MonoBehaviour
 {
     //use accelerometer to move ball
-    float speed = 10.0f;
+    float speed = 20.0f;
 
     void Update()
     {
-        Vector3 dir = Vector3.zero;
-        //phone is held parallel to ground
+        //get accelerometer input
+        float x = Input.acceleration.x;
+        float y = Input.acceleration.y;
 
-        //xy plane is mapped onto xz plane
-        //rotate 90 degrees around y axis
-        dir.x = -Input.acceleration.y;
-        dir.z = Input.acceleration.x;
+        //calculate movement vector based on input
+        Vector3 movement = new Vector3(-x, 0.0f, -y);
 
-        //clamp acceleration vector to the marble
-        if (dir.sqrMagnitude > 1)
-            dir.Normalize();
+        //apply speed to movement vector
+        movement *= speed;
 
-        //make it move 10 meters per second instead of 10 meters per frame
-        dir *= Time.deltaTime;
-
-        //move the object
-        transform.Translate(dir * speed);
+        //add velocity to ball based on movement vector
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = movement;
+        
     }
 }

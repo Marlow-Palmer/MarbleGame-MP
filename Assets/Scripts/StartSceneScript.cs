@@ -10,6 +10,11 @@ public class StartSceneScript : MonoBehaviour
         SceneManager.LoadScene("MainGameScene");
     }
 
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
     public void QuitGame()
     {
         //put the debug log so that i know the quit button is working

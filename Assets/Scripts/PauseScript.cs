@@ -17,6 +17,6 @@ public class PauseScript : MonoBehaviour
 
     public void ContinueButton()
     {
-        SceneManager.LoadScene("MainGameScene");
+        SceneManager.LoadScene("ContinuePause");
     }
 }
