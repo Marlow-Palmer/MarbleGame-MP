@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ContinuePause.unity
     guid: 241ec1ba5a8f0d245be90794c568fd55
   - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 8647f33350fbf884cbc4cb458f214b72
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: e1071c4c6617d9044905976dc30eb007
   - enabled: 1
